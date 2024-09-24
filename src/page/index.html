@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/output.css">
     <title>NEST-Architects</title>
+    <script src="../js/team.js" defer></script>
+    <script src="../js/projects.js" defer></script>
+    <script src="../js/description.js" defer></script>
 </head>
 <body>
-<nav class="bg-gray-800 fixed top-0 w-full z-10">
+<nav class="bg-gray-800 fixed top-0 w-full z-10" id="header-nav">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -40,9 +43,9 @@
                 </div>
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex space-x-4">
-                        <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Description</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a><!--                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>-->
+                        <a id="description-btn" href="#" onclick="movedDescription()" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Description</a>
+                        <a id="projects-btn" href="#" onclick="movedProjects()" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                        <a id="team-btn" href="#" onclick="movedTeam()" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a><!--                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>-->
                     </div>
                 </div>
             </div>
@@ -59,7 +62,8 @@
         </div>
     </div>
 </nav>
-<section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 z-0">
+
+<section id="description-section" class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 z-0">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
     <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
     <div class="mx-auto max-w-2xl lg:max-w-4xl">
@@ -89,23 +93,23 @@
             <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                     <dt class="text-base leading-7 text-gray-600">공모전 수상</dt>
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">3</dd>
+                    <dd id="count-awards" class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">3</dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                     <dt class="text-base leading-7 text-gray-600">건축한 건물</dt>
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">10+</dd>
+                    <dd id="count-buildings" class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">10+</dd>
                 </div>
                 <div class="mx-auto flex max-w-xs flex-col gap-y-4">
                     <dt class="text-base leading-7 text-gray-600">고객</dt>
-                    <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">10,000+</dd>
+                    <dd id="count-customers" class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">10,000+</dd>
                 </div>
             </dl>
         </div>
     </div>
 </section>
 <div>
-    <p class="flex justify-center text-blue-600 mb-10 font-bold text-3xl">Our Projects</p>
-    <div class="bg-white">
+    <div id="project-div" class="bg-white opacity-0 transition-box">
+        <p class="flex justify-center text-blue-600 font-bold text-3xl">Our Projects</p>
         <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div>
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">저희가 만든 건축물</h2>
@@ -168,7 +172,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-white py-24 sm:py-32">
+    <div id="team-div" class="bg-white py-24 sm:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:text-center">
                 <h2 class="text-base font-semibold leading-7 text-indigo-600">저희는 이렇게 일합니다.</h2>
